@@ -8,7 +8,7 @@ import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
-@DatabaseTable(tableName="gameInfo")
+@DatabaseTable(tableName = "gameInfo")
 public class GameInfo {
 	@DatabaseField(generatedId = true)
 	private int gameId;
@@ -18,6 +18,9 @@ public class GameInfo {
 
 	@DatabaseField
 	private int bookSize;
+
+	@DatabaseField(columnName = "giftId", foreign = true, foreignAutoRefresh = true)
+	private GiftInfo giftInfo;
 
 	@DatabaseField(dataType = DataType.BYTE_ARRAY)
 	private byte[] coverImage;
@@ -64,6 +67,14 @@ public class GameInfo {
 
 	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
+	}
+
+	public GiftInfo getGiftInfo() {
+		return giftInfo;
+	}
+
+	public void setGiftInfo(GiftInfo giftInfo) {
+		this.giftInfo = giftInfo;
 	}
 
 }

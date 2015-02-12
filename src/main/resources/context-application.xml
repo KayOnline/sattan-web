@@ -30,11 +30,11 @@
 	<!-- 使用Aspectj相关注解 -->
 <!-- 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy> -->
 	
-	<context:property-placeholder location="classpath:conf.properties" />
 	
 <!-- 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" p:dataSource-ref="dataSource"></bean> -->
 
 	<!-- 应用预定义参数 -->
+	<context:property-placeholder location="classpath:conf.properties" />
 	<bean id="applicationConfig" class="org.kay.zoo.sheep.framework.ApplicationConfig">
 		<property name="props">
 			<map>
@@ -46,9 +46,4 @@
 		</property>
 	</bean>
 	
-	<bean id="gameInfoDao" class="com.j256.ormlite.spring.DaoFactory" factory-method="createDao">
-        <constructor-arg index="0" ref="dataSource" />
-        <constructor-arg index="1" value="org.kay.zoo.sheep.busi.entity.GameInfo" />
-    </bean>
-    
 </beans>
