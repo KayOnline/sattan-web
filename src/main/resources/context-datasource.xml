@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p" 
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/util 
+        http://www.springframework.org/schema/util/spring-util.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx 
+	    http://www.springframework.org/schema/tx/spring-tx.xsd
+	    http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/data/jpa
+        http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+        
+	<!-- <context:component-scan base-package="org.kay" />
+    <context:annotation-config /> -->
+	
+	<!-- JNDI DataSource -->
+	<!-- 
+	<jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/oracle1"
+		resource-ref="false" cache="true" lookup-on-startup="true"
+		default-ref="devDataSource" />
+	 -->
+
+	<!-- JDBC DataSource -->
+	<!-- 
+	<bean id="devDataSource" 
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource" 
+		lazy-init="true" 
+		p:driverClassName="oracle.jdbc.OracleDriver"
+		p:url="jdbc:oracle:thin:@localhost:1521:orcl" 
+		p:username="KAY"
+		p:password="KAY" />
+	 -->
+	 
+	 <!-- 
+	 <bean id="devDataSource" 
+		class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close" 
+		p:driverClass="org.sqlite.JDBC"
+		p:jdbcUrl="jdbc:sqlite:test.db" 
+		p:minPoolSize="1"
+		p:maxPoolSize="20"
+		p:initialPoolSize="3"
+		p:maxIdleTime="300"
+		p:acquireIncrement="3"
+		p:idleConnectionTestPeriod="60"
+		p:acquireRetryAttempts = "30"
+		p:preferredTestQuery="SELECT 1" />
+	 -->
+	 
+	<bean id="dataSource" class="com.j256.ormlite.jdbc.JdbcPooledConnectionSource" init-method="initialize"
+		p:url="jdbc:sqlite:test.db"
+		p:maxConnectionAgeMillis="100000"
+		p:checkConnectionsEveryMillis="30000"
+		p:testBeforeGet="true"
+	/>
+	
+	
+</beans>
