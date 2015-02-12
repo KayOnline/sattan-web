@@ -4,20 +4,18 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<parent>
-		<groupId>org.kay.zoo</groupId>
-		<artifactId>zoo-parent</artifactId>
+		<groupId>org.kay.sattan</groupId>
+		<artifactId>sattan-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../zoo-parent/pom.xml</relativePath>
+		<relativePath>../sattan-parent/pom.xml</relativePath>
 	</parent>
 
-	<artifactId>zoo-sheep</artifactId>
+	<artifactId>sattan-web</artifactId>
 	<packaging>war</packaging>
 	
-	<name>zoo-sheep</name>
-	<description>
-		
-	</description>
-	<url>http://www.mybatis.org/core/</url>
+	<name>sattan-web</name>
+	<description>Sattan Web Application</description>
+	<url>https://github.com/KayOnline/sattan-web/</url>
 
 	<dependencies>
 		<dependency>
