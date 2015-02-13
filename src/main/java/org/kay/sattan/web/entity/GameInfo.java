@@ -1,4 +1,4 @@
-package org.kay.zoo.sheep.busi.entity;
+package org.kay.sattan.web.entity;
 
 import java.util.Date;
 

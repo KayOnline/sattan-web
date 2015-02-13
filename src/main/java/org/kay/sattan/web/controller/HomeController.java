@@ -1,12 +1,10 @@
-package org.kay.zoo.sheep;
+package org.kay.sattan.web.controller;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -19,15 +17,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-import org.codehaus.jackson.JsonGenerationException;
-import org.codehaus.jackson.map.JsonMappingException;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.ObjectWriter;
-import org.kay.zoo.sheep.busi.entity.GameInfo;
-import org.kay.zoo.sheep.busi.entity.GameInfoService;
-import org.kay.zoo.sheep.framework.JsonUtils;
-
-import static org.kay.zoo.sheep.framework.JsonResponse.*;
+import org.kay.sattan.web.entity.GameInfo;
+import org.kay.sattan.web.framework.JsonUtils;
+import org.kay.sattan.web.service.GameInfoService;
+import static org.kay.sattan.web.framework.JsonResponse.*;
 
 
 @Controller

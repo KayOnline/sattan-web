@@ -23,15 +23,13 @@
 	<context:component-scan base-package="org.kay" />
 	<context:annotation-config />
 
-	<bean id="giftInfoDao" class="com.j256.ormlite.spring.DaoFactory" factory-method="createDao">
-		<constructor-arg index="0" ref="dataSource" />
-		<constructor-arg index="1" value="org.kay.zoo.sheep.busi.entity.GiftInfo" />
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
 	</bean>
-
-	<bean id="gameInfoDao" class="com.j256.ormlite.spring.DaoFactory" factory-method="createDao">
-		<constructor-arg index="0" ref="dataSource" />
-		<constructor-arg index="1" value="org.kay.zoo.sheep.busi.entity.GameInfo" />
-	</bean>
-
+	
+	<!-- scan for mappers and let them be autowired -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="org.kay.sattan.web.mapper" />
+    </bean>
 
 </beans>

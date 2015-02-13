@@ -1,8 +1,10 @@
-package org.kay.zoo.sheep.busi.entity;
+package org.kay.sattan.web.dao;
 
 import java.util.List;
 
-public interface GameInfoService {
+import org.kay.sattan.web.entity.GameInfo;
+
+public interface GameInfoDao {
 	public List<GameInfo> queryForAll();
 	public int createOrUpdate(GameInfo gameInfo);
 	public int deleteById(String id);

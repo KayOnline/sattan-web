@@ -35,7 +35,7 @@
 
 	<!-- 应用预定义参数 -->
 	<context:property-placeholder location="classpath:conf.properties" />
-	<bean id="applicationConfig" class="org.kay.zoo.sheep.framework.ApplicationConfig">
+	<bean id="applicationConfig" class="org.kay.sattan.web.framework.ApplicationConfig">
 		<property name="props">
 			<map>
 				<entry key="applicationCode" value="${appConfig.applicationCode}" />

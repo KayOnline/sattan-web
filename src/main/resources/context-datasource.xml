@@ -40,9 +40,7 @@
 	 -->
 	 
 	 <!-- C3P0 -->
-	 <!-- 
-	 <bean id="devDataSource" 
-		class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close" 
+	 <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close" 
 		p:driverClass="org.sqlite.JDBC"
 		p:jdbcUrl="jdbc:sqlite:test.db" 
 		p:minPoolSize="1"
@@ -51,10 +49,11 @@
 		p:maxIdleTime="300"
 		p:acquireIncrement="3"
 		p:idleConnectionTestPeriod="60"
-		p:acquireRetryAttempts = "30"
+		p:acquireRetryAttempts = "3"
 		p:preferredTestQuery="SELECT 1" />
-	 -->
-	 
+	
+	<!-- ORMLite -->
+	<!-- 
 	<bean id="dataSource" class="com.j256.ormlite.jdbc.JdbcPooledConnectionSource" init-method="initialize"
 		p:url="jdbc:sqlite:test.db"
 		p:maxConnectionsFree="2"
@@ -62,6 +61,7 @@
 		p:checkConnectionsEveryMillis="30000"
 		p:testBeforeGet="true"
 	/>
+	 -->
 	
 	
 </beans>

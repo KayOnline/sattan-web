@@ -62,7 +62,7 @@
 	<!-- Freemarker ViewResolver. -->
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver"
-		p:viewClass="org.kay.zoo.sheep.framework.ExtFreeMarkerView"
+		p:viewClass="org.kay.sattan.web.framework.ExtFreeMarkerView"
 		p:contentType="text/html;charset=UTF-8"
 		p:exposeRequestAttributes="true"
         p:exposeSessionAttributes="true"
