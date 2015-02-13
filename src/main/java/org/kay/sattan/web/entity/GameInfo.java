@@ -1,32 +1,17 @@
 package org.kay.sattan.web.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-import org.springframework.format.annotation.DateTimeFormat;
+public class GameInfo implements Serializable {
 
-import com.j256.ormlite.field.DataType;
-import com.j256.ormlite.field.DatabaseField;
-import com.j256.ormlite.table.DatabaseTable;
+	private static final long serialVersionUID = 1L;
 
-@DatabaseTable(tableName = "gameInfo")
-public class GameInfo {
-	@DatabaseField(generatedId = true)
 	private int gameId;
-
-	@DatabaseField
 	private String gameName;
-
-	@DatabaseField
 	private int bookSize;
-
-	@DatabaseField(columnName = "giftId", foreign = true, foreignAutoRefresh = true)
 	private GiftInfo giftInfo;
-
-	@DatabaseField(dataType = DataType.BYTE_ARRAY)
 	private byte[] coverImage;
-
-	@DatabaseField
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date createTime;
 
 	public int getGameId() {

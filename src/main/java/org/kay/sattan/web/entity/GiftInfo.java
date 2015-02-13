@@ -1,15 +1,12 @@
 package org.kay.sattan.web.entity;
 
-import com.j256.ormlite.field.DatabaseField;
-import com.j256.ormlite.table.DatabaseTable;
+import java.io.Serializable;
 
-@DatabaseTable
-public class GiftInfo {
+public class GiftInfo implements Serializable {
 
-	@DatabaseField(generatedId = true)
+	private static final long serialVersionUID = 1L;
+
 	private int giftId;
-
-	@DatabaseField(canBeNull = false)
 	private String giftName;
 
 	public int getGiftId() {
