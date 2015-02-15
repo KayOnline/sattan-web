@@ -15,7 +15,12 @@ public class GameInfoDaoImpl implements GameInfoDao {
 	private GameInfoMapper gameInfoMapper;
 
 	public List<GameInfo> queryForAll() {
-		return this.gameInfoMapper.queryForAll();
+		return this.gameInfoMapper.query(null);
+	}
+	
+	public GameInfo queryById(String gameId) {
+		List<GameInfo> gameInfoList = this.gameInfoMapper.query(gameId);
+		return gameInfoList.get(0);
 	}
 
 	public int createOrUpdate(GameInfo gameInfo) {
