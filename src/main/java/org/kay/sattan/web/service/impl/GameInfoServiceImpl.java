@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import org.kay.sattan.web.dao.GameInfoDao;
 import org.kay.sattan.web.dao.GiftInfoDao;
 import org.kay.sattan.web.entity.GameInfo;
+import org.kay.sattan.web.entity.GiftInfo;
 import org.kay.sattan.web.service.GameInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,7 @@ public class GameInfoServiceImpl implements GameInfoService {
 
 	public List<GameInfo> queryForAll() {
 		List<GameInfo> gameInfoList = this.gameInfoDao.queryForAll();
+		List<GiftInfo> giftInfoList = this.giftInfoDao.queryForAll();
 		return gameInfoList;
 	}
 	

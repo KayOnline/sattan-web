@@ -8,6 +8,7 @@ public class GiftInfo implements Serializable {
 
 	private int giftId;
 	private String giftName;
+	private GameInfo gameInfo;
 
 	public int getGiftId() {
 		return giftId;
@@ -23,6 +24,14 @@ public class GiftInfo implements Serializable {
 
 	public void setGiftName(String giftName) {
 		this.giftName = giftName;
+	}
+
+	public GameInfo getGameInfo() {
+		return gameInfo;
+	}
+
+	public void setGameInfo(GameInfo gameInfo) {
+		this.gameInfo = gameInfo;
 	}
 
 }

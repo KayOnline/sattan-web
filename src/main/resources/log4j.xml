@@ -33,9 +33,6 @@
 	<logger name="org.apache.ibatis">  
 	    <level value="debug" />  
 	</logger>
-	<logger name="org.spring">  
-	    <level value="debug" />  
-	</logger>
 	
 	<root>
 		<level value="INFO" />

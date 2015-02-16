@@ -2,6 +2,7 @@ package org.kay.sattan.web.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 public class GameInfo implements Serializable {
 
@@ -10,7 +11,7 @@ public class GameInfo implements Serializable {
 	private int gameId;
 	private String gameName;
 	private int bookSize;
-	private GiftInfo giftInfo;
+	private List<GiftInfo> giftInfos;
 	private byte[] coverImage;
 	private Date createTime;
 
@@ -54,12 +55,12 @@ public class GameInfo implements Serializable {
 		this.createTime = createTime;
 	}
 
-	public GiftInfo getGiftInfo() {
-		return giftInfo;
+	public List<GiftInfo> getGiftInfos() {
+		return giftInfos;
 	}
 
-	public void setGiftInfo(GiftInfo giftInfo) {
-		this.giftInfo = giftInfo;
+	public void setGiftInfos(List<GiftInfo> giftInfos) {
+		this.giftInfos = giftInfos;
 	}
 
 }
