@@ -88,6 +88,10 @@
 		}
 		
 		function addRecord() {
+			$("#form_gameId").val('');
+			$("#form_gameName").val('');
+			$("#form_bookSize").val('');
+			$("#form_createTime").val('');
 			$('#myModal').modal();
 		}
 

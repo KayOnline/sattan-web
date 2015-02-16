@@ -22,10 +22,10 @@ public interface GameInfoMapper {
 	@Options(flushCache=false, useCache=true)
 	@Select("<script>select * from gameInfo <if test=\"gameId!=null\">where gameId = #{gameId}</if></script>")
 	@Results({
-//		@Result(column = "gameId", property = "gameId"),
-//		@Result(column = "gameName", property = "gameName"),
-//		@Result(column = "bookSize", property = "bookSize"),
-//		@Result(column = "createTime", property = "createTime", javaType = java.util.Date.class),
+		@Result(column = "gameId", property = "gameId"),
+		@Result(column = "gameName", property = "gameName"),
+		@Result(column = "bookSize", property = "bookSize"),
+		@Result(column = "createTime", property = "createTime", javaType = java.util.Date.class),
 		@Result(property = "giftInfos", column = "gameId", javaType = List.class, many = @Many(select="org.kay.sattan.web.mapper.GiftInfoMapper.queryByGameId"))
 	})
 	public List<GameInfo> query(@Param(value="gameId") String gameId);
@@ -34,7 +34,7 @@ public interface GameInfoMapper {
 	public GameInfo queryById(@Param(value="gameId") String gameId);
 	
 	@Options(flushCache=true, useCache=false)  
-	@Insert("insert into gameInfo(gameName, bookSize, createTime) values (#{gameInfo.gameName}, #{gameInfo.bookSize}, #{gameInfo.createTime}")
+	@Insert("insert into gameInfo(gameName, bookSize, createTime) values (#{gameInfo.gameName}, #{gameInfo.bookSize}, #{gameInfo.createTime})")
 	public int save(@Param(value="gameInfo") GameInfo gameInfo);
 	
 	@Options(flushCache=true, useCache=false)
